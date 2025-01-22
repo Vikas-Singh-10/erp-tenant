@@ -18,11 +18,11 @@ export const createWinstonLogger = (configService: ConfigService) => {
         ),
       }),
       new (CloudWatchTransport as any)({
-        logGroupName: configService.get<String>('cloudwatch.groupName'),
-        logStreamName: configService.get<String>('cloudwatch.streamName'),
-        awsAccessKeyId: configService.get<String>('cloudwatch.awsAccessKeyId'),
-        awsSecretKey: configService.get<String>('cloudwatch.awsSecretKey'),
-        awsRegion: configService.get<String>('cloudwatch.awsRegion'),
+        logGroupName: configService.get<string>('cloudwatch.groupName'),
+        logStreamName: configService.get<string>('cloudwatch.streamName'),
+        awsAccessKeyId: configService.get<string>('cloudwatch.awsAccessKeyId'),
+        awsSecretKey: configService.get<string>('cloudwatch.awsSecretKey'),
+        awsRegion: configService.get<string>('cloudwatch.awsRegion'),
         messageFormatter: function (log) {
           return (
             log.timestamp +
